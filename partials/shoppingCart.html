@@ -11,13 +11,13 @@
   <tr ng-repeat="tea in cart">
     <td>
       <p>{{tea.name}}</p>
-      <img src="{{tea.imageUrl}}" alt="">
+      <img src="{{tea.imageUrl}}" alt="tea">
       <p>Caffeine Scale: {{tea.caffeineScale}}</p>
       <p>Ingredients: {{tea.ingredients}}</p>
       <p>Rating: {{tea.rating}}</p>
     </td>
-    <td>{{tea.quantity}}</td>
+    <td><span ng-show="cartEdit===false">{{tea.quantity}}</span><input type="text" ng-model="newQuantity" ng-show="cartEdit===true"></td>
     <td>{{tea.quantity * tea.price | currency}}</td>
-    <td><button>Edit</button><button>Remove</button></td>
+    <td><button ng-click="cartEdit = !cartEdit" ng-show="cartEdit===false">Edit</button><button ng-show="cartEdit===true" ng-click=save(newQuantity)>Save</button><button>Remove</button></td>
   </tr>
 </table>

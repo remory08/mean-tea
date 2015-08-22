@@ -1,5 +1,6 @@
 app.controller("getTeas", function($scope, $http) {
   $scope.totalItems = 0;
+  $scope.cartEdit = false;
   $scope.cart = [];
   $http.get('teaData.json').then(function(data) {
     $scope.teaData = data.data;
@@ -14,12 +15,15 @@ app.controller("getTeas", function($scope, $http) {
     }
     tea.quantity = quantity;
     $scope.totalItems = $scope.totalItems + parseInt(quantity)
-    console.log(tea);
     $scope.cart.push(tea)
-    console.log($scope.cart);
   }
-})
+
+
+  $scope.save = function(newQuantity) {
+    this.cartEdit = false;
+    this.tea.quantity = newQuantity;
+  }
 
 // app.controller("cart", function() {
 //
-// })
+ })
