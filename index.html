@@ -13,21 +13,21 @@
     <nav><a href="">Home</a><a href="">About</a><a href="">Contact</a></nav>
     <form action="">
       <label>Search by Category:
-        <select name="" id="">
+        <select ng-model="categorySort">
           <option value=""></option>
-          <option value="">dark</option>
-          <option value="">cold</option>
-          <option value="">awesome</option>
-          <option value="">dry</option>
-          <option value="">hot</option>
-          <option value="">summer</option>
-          <option value="">lucid</option>
-          <option value="">warm</option>
-          <option value="">winter</option>
-          <option value="">spring</option>
+          <option value="dark">dark</option>
+          <option value="cold">cold</option>
+          <option value="awesome">awesome</option>
+          <option value="dry">dry</option>
+          <option value="hot">hot</option>
+          <option value="summer">summer</option>
+          <option value="lucid">lucid</option>
+          <option value="warm">warm</option>
+          <option value="winter">winter</option>
+          <option value="spring">spring</option>
         </select>
       </label>
-      <label>Search by Name: <input type="search"></label>
+      <label>Search by Name: <input type="search" ng-model="nameSearch"></label>
     </form>
     <button>Checkout | Bag Empty!</button>
     <table >
@@ -35,13 +35,13 @@
       <th>Tea</th>
       <th>Information</th>
       <th></th>
-      <th><select name="" id="">
+      <th><select ng-model="priceSort">
         <option value=""></option>
         <option value="">Highest</option>
         <option value="">Lowest</option>
       </select></th>
     </tr>
-    <tr ng-repeat="tea in teaData">
+    <tr ng-repeat="tea in teaData | filter: nameSearch | filter:{categories: categorySort}">
       <td><img class="icon" src="{{tea.imageUrl}}" ></td>
       <td class="information">{{tea.name}}  <span>Quantity: </span>
         <p>Price: {{tea.price | currency }}</p>

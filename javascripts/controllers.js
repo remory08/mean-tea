@@ -4,6 +4,9 @@ app.controller("getTeas", function($scope, $http) {
     $scope.teaData.forEach(function(tea) {
       tea.price = tea.price/100;
     })
-
   })
+})
+
+app.controller("cart", function() {
+  
 })
