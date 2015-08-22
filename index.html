@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Mean Tea</title>
-</head>
-<body>
-  <header>Guaranteed Awesome!</header>
-  <header><h1><em>Welcome to MEAN Tea!</em></h1></header>
-  <nav><a href="">Home</a><a href="">About</a><a href="">Contact</a></nav>
-  <form action="">
-    <label>Search by Category:
-      <select name="" id="">
-        <option value=""></option>
-        <option value="">dark</option>
-        <option value="">cold</option>
-        <option value="">awesome</option>
-        <option value="">dry</option>
-        <option value="">hot</option>
-        <option value="">summer</option>
-        <option value="">lucid</option>
-        <option value="">warm</option>
-        <option value="">winter</option>
-        <option value="">spring</option>
-      </select>
-    </label>
-    <label>Search by Name: <input type="search"></label>
-  </form>
-  <button>Checkout | Bag Empty!</button>
-  <table>
+<html lang="en" ng-app="meanTea">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mean Tea</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script type= "text/javascript" src="./javascripts/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="ng-cloak" ng-controller="getTeas">
+    <header>Guaranteed Awesome!</header>
+    <header><h1><em>Welcome to MEAN Tea!</em></h1></header>
+    <nav><a href="">Home</a><a href="">About</a><a href="">Contact</a></nav>
+    <form action="">
+      <label>Search by Category:
+        <select name="" id="">
+          <option value=""></option>
+          <option value="">dark</option>
+          <option value="">cold</option>
+          <option value="">awesome</option>
+          <option value="">dry</option>
+          <option value="">hot</option>
+          <option value="">summer</option>
+          <option value="">lucid</option>
+          <option value="">warm</option>
+          <option value="">winter</option>
+          <option value="">spring</option>
+        </select>
+      </label>
+      <label>Search by Name: <input type="search"></label>
+    </form>
+    <button>Checkout | Bag Empty!</button>
+    <table >
     <tr>
       <th>Tea</th>
       <th>Information</th>
@@ -38,16 +41,15 @@
         <option value="">Lowest</option>
       </select></th>
     </tr>
-    <tr ng-repeat="tea in teas">
-      <td><img src="tea.imageUrl" alt=""></td>
-      <td>
-        <p>{{tea.name}}<span>Quantity: </span></p>
-        <p>Price: {{tea.price | currency}}</p>
+    <tr ng-repeat="tea in teaData">
+      <td><img class="icon" src="{{tea.imageUrl}}" ></td>
+      <td class="information">{{tea.name}}  <span>Quantity: </span>
+        <p>Price: {{tea.price | currency }}</p>
         <p>Caffeiene Scale: {{tea.caffeineScale}}</p>
         <p>Ingredients: {{tea.ingredients}}</p>
         <p>Rating: {{tea.rating}}</p>
         <p>In Stock? {{tea.inStock | inStock}}</p>
-          <ul ng-repeat="category in categories">
+       <span>Categories: </span> <ul ng-repeat="category in tea.categories">
             <li>{{category}}</li>
           </ul>
       </td>
@@ -69,5 +71,9 @@
       </td>
     </tr>
   </table>
-</body>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+  <script type="text/javascript" src="./javascripts/services.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers.js"></script>
+  <script type="text/javascript" src="./javascripts/filters.js"></script>
+  </body>
 </html>
