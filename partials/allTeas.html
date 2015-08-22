@@ -1,0 +1,59 @@
+<form>
+  <label>Search by Category:
+    <select ng-model="categorySort">
+      <option value=""></option>
+      <option value="dark">dark</option>
+      <option value="cold">cold</option>
+      <option value="awesome">awesome</option>
+      <option value="dry">dry</option>
+      <option value="hot">hot</option>
+      <option value="summer">summer</option>
+      <option value="lucid">lucid</option>
+      <option value="warm">warm</option>
+      <option value="winter">winter</option>
+      <option value="spring">spring</option>
+    </select>
+  </label>
+  <label>Search by Name: <input type="search" ng-model="nameSearch"></label>
+</form>
+<a href="#/checkout" ng-click=checkout()><button>Checkout | Bag: <span ng-show="totalItems >0">{{totalItems}} </span><ng-pluralize count="totalItems" when="{'0': 'Empty!', '1': 'item', 'other': 'items'}"></ng-pluralize></button></a>
+<table >
+<tr>
+  <th>Tea</th>
+  <th>Information</th>
+  <th></th>
+  <th><select ng-model="priceSort">
+    <option value=""></option>
+    <option value="">Highest</option>
+    <option value="">Lowest</option>
+  </select></th>
+</tr>
+<tr ng-repeat="tea in teaData | filter: {name: nameSearch} | filter:{categories: categorySort}">
+  <td><img class="icon" src="{{tea.imageUrl}}" ></td>
+  <td class="information">{{tea.name}}  <span>Quantity: </span>
+    <p>Price: {{tea.price | currency }}</p>
+    <p>Caffeiene Scale: {{tea.caffeineScale}}</p>
+    <p>Ingredients: {{tea.ingredients}}</p>
+    <p>Rating: {{tea.rating}}</p>
+    <p>In Stock? {{tea.inStock | inStock}}</p>
+   <span>Categories: </span> <ul ng-repeat="category in tea.categories">
+        <li>{{category}}</li>
+      </ul>
+  </td>
+  <td>
+    <select ng-model="quantity">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </td>
+  <td>
+    <button ng-click=addToBag(tea,quantity)>Add to Bag</button>
+  </td>
+</tr>
+</table>

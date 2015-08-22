@@ -1,0 +1,23 @@
+<header>
+  <h3>My Shopping Cart</h3> <h3>Order Total: </h3>
+</header>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Sub-total</th>
+  </tr>
+  <tr ng-repeat="tea in cart">
+    <td>
+      <p>{{tea.name}}</p>
+      <img src="{{tea.imageUrl}}" alt="">
+      <p>Caffeine Scale: {{tea.caffeineScale}}</p>
+      <p>Ingredients: {{tea.ingredients}}</p>
+      <p>Rating: {{tea.rating}}</p>
+    </td>
+    <td>{{tea.quantity}}</td>
+    <td>{{tea.quantity * tea.price | currency}}</td>
+    <td><button>Edit</button><button>Remove</button></td>
+  </tr>
+</table>

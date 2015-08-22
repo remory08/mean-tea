@@ -8,69 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="ng-cloak" ng-controller="getTeas">
-    <header>Guaranteed Awesome!</header>
-    <header><h1><em>Welcome to MEAN Tea!</em></h1></header>
-    <nav><a href="">Home</a><a href="">About</a><a href="">Contact</a></nav>
-    <form action="">
-      <label>Search by Category:
-        <select ng-model="categorySort">
-          <option value=""></option>
-          <option value="dark">dark</option>
-          <option value="cold">cold</option>
-          <option value="awesome">awesome</option>
-          <option value="dry">dry</option>
-          <option value="hot">hot</option>
-          <option value="summer">summer</option>
-          <option value="lucid">lucid</option>
-          <option value="warm">warm</option>
-          <option value="winter">winter</option>
-          <option value="spring">spring</option>
-        </select>
-      </label>
-      <label>Search by Name: <input type="search" ng-model="nameSearch"></label>
-    </form>
-    <button>Checkout | Bag Empty!</button>
-    <table >
-    <tr>
-      <th>Tea</th>
-      <th>Information</th>
-      <th></th>
-      <th><select ng-model="priceSort">
-        <option value=""></option>
-        <option value="">Highest</option>
-        <option value="">Lowest</option>
-      </select></th>
-    </tr>
-    <tr ng-repeat="tea in teaData | filter: nameSearch | filter:{categories: categorySort}">
-      <td><img class="icon" src="{{tea.imageUrl}}" ></td>
-      <td class="information">{{tea.name}}  <span>Quantity: </span>
-        <p>Price: {{tea.price | currency }}</p>
-        <p>Caffeiene Scale: {{tea.caffeineScale}}</p>
-        <p>Ingredients: {{tea.ingredients}}</p>
-        <p>Rating: {{tea.rating}}</p>
-        <p>In Stock? {{tea.inStock | inStock}}</p>
-       <span>Categories: </span> <ul ng-repeat="category in tea.categories">
-            <li>{{category}}</li>
-          </ul>
-      </td>
-      <td>
-        <select name="" id="">
-          <option value="1"></option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-      </td>
-      <td>
-        <button ng-click=addToBag()>Add to Bag</button>
-      </td>
-    </tr>
-  </table>
+
+    <header class="orangeHeader">Guaranteed Awesome!</header>
+
+    <header class="titleHeader"><h1><em>Welcome to MEAN Tea!</em></h1></header>
+
+    <nav><a href="#/">Home</a><a href="">About</a><a href="">Contact</a></nav>
+
+    <div ng-view></div>
+
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
   <script type="text/javascript" src="./javascripts/services.js"></script>
   <script type="text/javascript" src="./javascripts/controllers.js"></script>
