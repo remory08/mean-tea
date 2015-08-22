@@ -1,5 +1,5 @@
 <header>
-  <h3>My Shopping Cart</h3> <h3>Order Total: </h3>
+  <h3>My Shopping Cart</h3> <h3>Order Total: {{total | currency}} </h3>
 </header>
 
 <table>
@@ -18,6 +18,8 @@
     </td>
     <td><span ng-show="cartEdit===false">{{tea.quantity}}</span><input type="text" ng-model="newQuantity" ng-show="cartEdit===true"></td>
     <td>{{tea.quantity * tea.price | currency}}</td>
-    <td><button ng-click="cartEdit = !cartEdit" ng-show="cartEdit===false">Edit</button><button ng-show="cartEdit===true" ng-click=save(newQuantity)>Save</button><button>Remove</button></td>
+    <td><button ng-click="cartEdit = !cartEdit" ng-show="cartEdit===false">Edit</button><button ng-show="cartEdit===true" ng-click=save(newQuantity)>Save</button><button ng-click=remove()>Remove</button></td>
   </tr>
 </table>
+
+<button ng-click=clearCart()>Place Your Order</button>
