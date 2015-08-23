@@ -4,14 +4,77 @@ table {
 
 th, td {
   vertical-align: top;
-  border: 1px solid grey;
+  border: 1px solid $grey;
   text-align: left;
 }
 
-.icon {
-  border: 1px solid red;
+.orangeHeader {
+  width: 95%;
+  margin-left: 2.5%;
+  background-color:$orange;
+  color: white;
+  padding: 10px;
+
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    font-family: $sansFam;
+  }
 }
 
-.information {
-  border: 2px solid green;
+.titleHeader {
+  margin: 2% 2.5%;
+  width: 95%;
+  h1 {
+    font-size: 44px;
+    font-family: $sansFam;
+    font-style: italic;
+    font-weight: 600;
+    color: $orange;
+  }
+}
+
+nav {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 3%;
+  border: 1px solid $darkgrey;
+  border-radius: 5px;
+  background-color: $grey;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+    color: $darkgrey;
+    font-family: $sansFam;
+    margin-right: 2%;
+  }
+}
+
+form {
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+table {
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+p {
+  padding-left: 10px;
+}
+
+.carthead {
+  h3 {
+    font-size: 19px;
+    font-weight: 700;
+    font-family: $sansFam;
+    margin-top: 20px;
+    margin-left: 2.5%;
+  }
+  #ot {
+    float: right;
+    margin-right: 2.5%;
+  }
 }

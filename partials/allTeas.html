@@ -16,32 +16,32 @@
   </label>
   <label>Search by Name: <input type="search" ng-model="nameSearch"></label>
 </form>
-<a href="#/checkout" ng-click=checkout()><button>Checkout | Bag: <span ng-show="totalItems >0">{{totalItems}} </span><ng-pluralize count="totalItems" when="{'0': 'Empty!', '1': 'item', 'other': 'items'}"></ng-pluralize></button></a>
+<a href="#/checkout" ng-click=checkout()><button class="checkout">Checkout | Bag: <span ng-show="totalItems >0">{{totalItems}} </span><ng-pluralize count="totalItems" when="{'0': 'Empty!', '1': 'item', 'other': 'items'}"></ng-pluralize></button></a>
 <table >
 <tr>
   <th>Tea</th>
   <th>Information</th>
-  <th></th>
+  <th>       </th>
   <th><select ng-model="priceSort">
     <option value=""></option>
-    <option value="">Highest</option>
-    <option value="">Lowest</option>
+    <option value="-tea.price">Highest</option>
+    <option value="tea.price">Lowest</option>
   </select></th>
 </tr>
-<tr ng-repeat="tea in teaData | filter: {name: nameSearch} | filter:{categories: categorySort}">
+<tr ng-repeat="tea in teaData | filter: {name: nameSearch} | filter:{categories: categorySort} | filter:{price: priceSort}">
   <td><img class="icon" src="{{tea.imageUrl}}" ></td>
-  <td class="information">{{tea.name}}  <span>Quantity: </span>
-    <p>Price: {{tea.price | currency }}</p>
-    <p>Caffeiene Scale: {{tea.caffeineScale}}</p>
-    <p>Ingredients: {{tea.ingredients}}</p>
-    <p>Rating: {{tea.rating}}</p>
-    <p>In Stock? {{tea.inStock | inStock}}</p>
-   <span>Categories: </span> <ul ng-repeat="category in tea.categories">
-        <li>{{category}}</li>
+  <td class="information"><h4>{{tea.name}}</h4>  <span id="q">Quantity: </span>
+    <p><span class="bold">Price: </span>{{tea.price | currency }}</p>
+    <p><span class="bold">Caffeiene Scale: </span>{{tea.caffeineScale}}</p>
+    <p><span class="bold">Ingredients: </span>{{tea.ingredients}}</p>
+    <p><span class="bold">Rating: </span>{{tea.rating}}</p>
+    <p><span class="bold">In Stock? </span>{{tea.inStock | inStock}}</p>
+   <p class="bold">Categories: </p> <ul ng-repeat="category in tea.categories"  class="bullet">
+        <li><i class="fa fa-check-circle-o"></i> {{category}}</li>
       </ul>
   </td>
   <td>
-    <select ng-model="quantity">
+    <select ng-model="quantity" class="qu">
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
@@ -53,7 +53,7 @@
     </select>
   </td>
   <td>
-    <button ng-click=addToBag(tea,quantity)>Add to Bag</button>
+    <button class="addToBag" ng-click=addToBag(tea,quantity)>Add to Bag</button>
   </td>
 </tr>
 </table>

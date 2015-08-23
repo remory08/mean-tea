@@ -57,11 +57,139 @@ table {
 
 th, td {
   vertical-align: top;
-  border: 1px solid grey;
+  border: 1px solid #eeeeee;
   text-align: left; }
 
-.icon {
-  border: 1px solid red; }
+.orangeHeader {
+  width: 95%;
+  margin-left: 2.5%;
+  background-color: #e07426;
+  color: white;
+  padding: 10px; }
+  .orangeHeader h3 {
+    font-size: 18px;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif; }
 
-.information {
-  border: 2px solid green; }
+.titleHeader {
+  margin: 2% 2.5%;
+  width: 95%; }
+  .titleHeader h1 {
+    font-size: 44px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #e07426; }
+
+nav {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 3%;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  padding: 20px; }
+  nav a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-right: 2%; }
+
+form {
+  width: 95%;
+  margin-left: 2.5%; }
+
+table {
+  width: 95%;
+  margin-left: 2.5%; }
+
+p {
+  padding-left: 10px; }
+
+.carthead h3 {
+  font-size: 19px;
+  font-weight: 700;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 20px;
+  margin-left: 2.5%; }
+
+.carthead #ot {
+  float: right;
+  margin-right: 2.5%; }
+
+table th {
+  padding: 10px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #b3b3b3; }
+
+table select {
+  text-align: center; }
+
+table h4, table #q {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 3%; }
+
+table #q {
+  display: inline-block;
+  float: right; }
+
+table .bold {
+  font-weight: 600;
+  line-height: 1.5; }
+
+table .bullet {
+  padding: 2px;
+  margin-left: 2%; }
+  table .bullet :first-child {
+    margin-top: 1%; }
+  table .bullet :last-child {
+    margin-bottom: 1%; }
+
+table .qu {
+  width: 100%; }
+
+.checkout {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e07426;
+  color: white;
+  float: right;
+  margin: 1% 2.5%; }
+
+.addToBag {
+  background-color: #e7bb38;
+  padding: 8px;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  width: 100%; }
+
+.order {
+  border-radius: 3px;
+  background-color: white;
+  float: right;
+  margin-right: 2.5%; }
+
+.remove {
+  width: 40%;
+  margin-right: 5%;
+  background-color: #c15146;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  float: right;
+  padding: 8px; }
+
+.edit, .save {
+  width: 40%;
+  margin-left: 2%;
+  background-color: #e7bb38;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 8px; }

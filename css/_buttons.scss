@@ -1,0 +1,46 @@
+.checkout {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: $orange;
+  color: white;
+  float: right;
+  margin:1% 2.5%;
+}
+
+.addToBag {
+  background-color: $gold;
+  padding: 8px;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  width: 100%;
+}
+
+.order {
+  border-radius: 3px;
+  background-color: white;
+  float: right;
+  margin-right: 2.5%;
+}
+
+.remove {
+  width: 40%;
+  margin-right: 5%;
+  background-color: $red;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  float: right;
+  padding: 8px;
+}
+
+.edit, .save {
+  width: 40%;
+  margin-left: 2%;
+  background-color: $gold;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 8px;
+}
