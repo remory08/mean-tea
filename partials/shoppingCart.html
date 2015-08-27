@@ -8,7 +8,7 @@
     <th>Quantity</th>
     <th>Sub-total</th>
   </tr>
-  <tr ng-repeat="tea in cart">
+  <tr ng-repeat="tea in cart track by $index">
     <td>
       <p>{{tea.name}}</p>
       <img src="{{tea.imageUrl}}" alt="tea">

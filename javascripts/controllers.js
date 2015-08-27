@@ -21,12 +21,12 @@ app.controller("getTeas", function($scope, $http) {
   })
 
   $scope.addToBag = function(tea, quantity) {
-    console.log(this.tea.$$hashKey);
+    // console.log(this.tea.$$hashKey);
     //need to handle duplicates to match the hashkey
     if (quantity === undefined) {
       quantity = 1;
     }
-    tea.quantity = quantity;
+    tea.quantity += quantity;
     $scope.totalItems = $scope.totalItems + parseInt(quantity)
     $scope.cart.push(tea)
     $scope.orderTotal();
