@@ -34,8 +34,9 @@
     <p><span class="bold">Price: </span>{{tea.price | currency }}</p>
     <div class="caffeine-section">
       <h4>Caffeine</h4>
-      mg/serving: {{tea.caffeineScale}}
-      <caffeine-meter caffeinemg="tea.caffeineScale" id="tea._id"></caffeine-meter>
+       <p>mg/serving: {{tea.caffeineScale}}</p>
+       <p>Rating: <span ng-show="tea.caffeineScale >= 180">HIGH</span><span ng-show="tea.caffeineScale >= 90 && tea.caffeineScale < 180">MODERATE</span><span ng-show="tea.caffeineScale < 90">LOW</span></p>
+      <caffeine-meter caffeinemg="{{tea.caffeineScale}}" id="tea._id"></caffeine-meter>
     </div>
     <p><span class="bold">Ingredients: </span>{{tea.ingredients}}</p>
     <p><span class="bold">Rating: </span>{{tea.rating}}</p>

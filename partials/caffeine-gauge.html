@@ -1,11 +1,6 @@
- <div id="gauge" class="200x160px"></div>
-
- <script>
-   var g = new JustGage({
-    id: "gauge",
-     value: tea.caffeinemg,
-     min: 0,
-    max: 300,
-    title: "Caffeine",
-   });
- </script>
+<div class="box gauge--3">
+   <div class="mask">
+     <div class="semi-circle"></div>
+     <div class="semi-circle--mask" style="transform: rotate({{0.66 * caffeinemg}}deg) translate3d(0,0,0) !important"></div>
+   </div>
+ </div>
